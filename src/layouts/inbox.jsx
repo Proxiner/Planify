@@ -1,8 +1,7 @@
-import React, { useEffect, useState, useRef, useContext } from "react";
+import React, { useEffect,useContext } from "react";
 
 import "@styles/inbox.scss";
 import NewTask from "@components/new_task";
-import axios from "axios";
 import { AddContext } from "@context/AddContext";
 
 export default function Inbox() {

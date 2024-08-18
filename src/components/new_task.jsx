@@ -12,6 +12,22 @@ export default function NewTask() {
   const [task_title, set_task_title] = useState("");
   const [task_body, set_task_body] = useState("");
 
+  useEffect(()=>{
+    
+    const handleKeyPress = (event) => {
+        if(event.key === 'T' || event.key === 't'){
+          setIsMessageOpen(true)
+        }
+    }
+
+    document.addEventListener('keydown' , handleKeyPress);
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyPress);
+    };
+
+  },[])
+
   const add_task = async () => {
     if (task_title !== "" && task_body !== "") {
       try {
