@@ -12,6 +12,7 @@ export default defineConfig({
       "@base": path.resolve(__dirname, './src/base'),
       "@utils": path.resolve(__dirname, './src/utils'),
       "@fonts": path.resolve(__dirname, './src/fonts'),
+      "@context": path.resolve(__dirname, './src/context'),
     }
   },
   plugins: [react()],

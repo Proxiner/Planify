@@ -6,7 +6,7 @@
   justify-content: center;
   width: 100%;
   height: 100dvh;
-  position: absolute;
+  position: relative;
   inset: 0;
 
   .popup_wrapper {
@@ -70,8 +70,8 @@
         margin: 1rem auto 4rem auto;
         width: 95%;
 
-        textarea,
-        input {
+        .text_box,
+        .input_task {
           width: 100%;
           height: 20px;
           background-color: transparent;
@@ -88,8 +88,8 @@
           font-size: 0.8rem;
         }
 
-        textarea::placeholder,
-        input::placeholder {
+        .text_box::placeholder,
+        .input_task::placeholder {
           color: #dedddd;
           text-align: left;
           font-size: 0.8rem;

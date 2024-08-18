@@ -1,13 +1,14 @@
 {
-    "compilerOptions": {
-        "baseUrl": "src",
-        "paths": {
-            "@layouts/*" : ["layouts/*"],
-            "@utils/*" : ["utils/*"],
-            "@base/*" : ["base/*"],
-            "@fonts/*" : ["fonts/*"],
-            "@components/*" : ["components/*"],
-            "@styles/*" : ["styles/*"],
-        }
+  "compilerOptions": {
+    "baseUrl": "src",
+    "paths": {
+      "@layouts/*": ["layouts/*"],
+      "@context/*": ["context/*"],
+      "@utils/*": ["utils/*"],
+      "@base/*": ["base/*"],
+      "@fonts/*": ["fonts/*"],
+      "@components/*": ["components/*"],
+      "@styles/*": ["styles/*"]
     }
+  }
 }

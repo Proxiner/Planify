@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
+
+import { AddContext } from "@context/AddContext";
 
 import "@styles/new_task.scss";
 import axios from "axios";
 
 export default function NewTask() {
+  const { fetch_tasks } = useContext(AddContext);
+
   const [isMesssageOpen, setIsMessageOpen] = useState(false);
   const [task_title, set_task_title] = useState("");
   const [task_body, set_task_body] = useState("");
@@ -19,6 +23,8 @@ export default function NewTask() {
           }
         );
         console.log(response.data);
+        setIsMessageOpen(false);
+        fetch_tasks();
       } catch (error) {
         console.log(error);
       }
@@ -41,6 +47,7 @@ export default function NewTask() {
                 type="text"
                 placeholder="To-do name"
                 value={task_title}
+                className="input_task"
                 onInput={(title) => set_task_title(title.target.value)}
               />
               <div className="line"></div>
