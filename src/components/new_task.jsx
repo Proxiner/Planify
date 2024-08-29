@@ -2,8 +2,9 @@ import React, { useEffect, useState, useContext } from "react";
 
 import { AddContext } from "@context/AddContext";
 
-import "@styles/new_task.scss";
+import "@styles/new_component.scss";
 import axios from "axios";
+import { base_url } from "../api/url";
 
 export default function NewTask() {
   const { fetch_tasks } = useContext(AddContext);
@@ -12,32 +13,27 @@ export default function NewTask() {
   const [task_title, set_task_title] = useState("");
   const [task_body, set_task_body] = useState("");
 
-  useEffect(()=>{
-    
+  useEffect(() => {
     const handleKeyPress = (event) => {
-        if(event.key === 'T' || event.key === 't'){
-          setIsMessageOpen(true)
-        }
-    }
-
-    document.addEventListener('keydown' , handleKeyPress);
-
-    return () => {
-      document.removeEventListener('keydown', handleKeyPress);
+      if (event.key === "T" || event.key === "t") {
+        setIsMessageOpen(true);
+      }
     };
 
-  },[])
+    document.addEventListener("keydown", handleKeyPress);
+
+    return () => {
+      document.removeEventListener("keydown", handleKeyPress);
+    };
+  }, []);
 
   const add_task = async () => {
     if (task_title !== "" && task_body !== "") {
       try {
-        const response = await axios.post(
-          "https://66b2b22d7fba54a5b7ea4774.mockapi.io/api/todo",
-          {
-            title: task_title,
-            body: task_body,
-          }
-        );
+        const response = await axios.post(`${base_url}/todo`, {
+          title: task_title,
+          body: task_body,
+        });
         console.log(response.data);
         setIsMessageOpen(false);
         fetch_tasks();
