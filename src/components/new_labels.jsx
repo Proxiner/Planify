@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import "@styles/new_component.scss";
 
 export default function new_labels() {
-  const [isMesssageOpen, setIsMessageOpen] = useState(true);
+  const [isMesssageOpen, setIsMessageOpen] = useState(false);
   const [label_title, set_label_title] = useState("");
   const [selectedId, setSelectedId] = useState(null);
 
